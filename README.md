@@ -1,37 +1,43 @@
-# MinDocMini Documentation
+# MinDocMini - Single Page Setup
 
-## Overview
-MinDocMini is a Jekyll-based single-page documentation site generator that combines all content into one scrollable page.
+## Files to Edit
 
-## Setup
-1. Install Jekyll: `gem install jekyll bundler`
-2. Install dependencies: `bundle install`
-3. Serve locally: `bundle exec jekyll serve`
+### Main Content
+**Edit:** `index.markdown`
+- Contains all page content in one file
+- Use `# Header` for main sections
+- Write content in standard markdown
 
-## Configuration
-Edit `_config.yml`:
+### Site Settings
+**Edit:** `_config.yml`
 ```yaml
 title: Your Document Title
 description: by Your Name
-baseurl: "/your-repo-name"
 ```
 
-## Adding Content
-Edit `index.markdown` to modify the single-page content. Content is organized in sections with H1 headers.
+## Adding Images
 
-## Media Files
-Place media descriptions in `_mindoc_media/` directory. Reference them using:
+### 1. Add Image Files
+Place images in: `assets/img/your-image.jpg`
+
+### 2. Create Image Description
+Create file: `_mindoc_media/your-image.md`
+```yaml
+---
+page: "section-name"
+media_type: "image"
+order: 1
+---
+![Description]({{ site.baseurl }}/assets/img/your-image.jpg)
+```
+
+### 3. Reference in Content
+Add to `index.markdown` where you want the image:
 ```liquid
 {% assign media = site.mindoc_media | where: "page", "section-name" %}
 {% include media.html pages=media %}
 ```
 
-## Styling
-Customize appearance by editing `_sass/main.scss`. The layout uses:
-- `.single-page-content` for main container
-- `.title-section` for header area
-- Standard markdown styling for content sections
-
 ## Build
-Generate static site: `bundle exec jekyll build`
-Output appears in `_site/` directory.
+`bundle exec jekyll serve` - Preview locally
+`bundle exec jekyll build` - Generate site
