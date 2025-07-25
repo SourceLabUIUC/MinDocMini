@@ -1,5 +1,5 @@
 ---
-page: introduction
+page: source
 title: Image_№2_from_Introduction
 media_type: image
 
@@ -16,12 +16,12 @@ format:
 credit_(IPTC):
 date_created_(IPTC):
 
-_path: /assets/img/doggo.jpg 
+_path: /assets/img/doggo.jpeg 
 order: '02'
 layout: image_description
 ---
 
-_title: Apple tree
+_title: doggo
 description: Main page photo
 creator: Unknown
 _date: Unknown
