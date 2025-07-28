@@ -1,5 +1,5 @@
 ---
-page: source
+page: second
 title: Image_№1_from_Introduction
 media_type: image
 
@@ -17,7 +17,7 @@ credit_(IPTC):
 date_created_(IPTC):
 
 _path: /assets/img/main_page.jpg 
-order: '02'
+order: '01'
 layout: image_description
 ---
 
