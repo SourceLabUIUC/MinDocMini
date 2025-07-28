@@ -4,6 +4,9 @@ layout: single_page
 
 # Introduction
 
+{% assign media = site.mindoc_media | where: "page", "section-name" %}
+{% include media.html pages=media %}
+
 {% assign media = site.mindoc_media | sort: "order" | where_exp: "item", "item.page == 'source'" | where_exp: "item", "item.media_type == 'video'" %}
 {% include media.html pages=media %}
 
